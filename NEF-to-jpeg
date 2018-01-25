@@ -1,0 +1,5 @@
+IFS='
+'
+set -f
+
+for i in $(find . -name '*.NEF'); do sips -Z 4000 -s format jpeg "$i" --out "${i//\.NEF/}".jpeg; rm "$i"; done
